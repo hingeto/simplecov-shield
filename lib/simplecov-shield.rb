@@ -11,6 +11,7 @@ class SimpleCov::Formatter::ShieldFormatter
     :badge_name => 'coverage',
     :precision => 0,
     :style => nil,
+    :shield_file_path => "#{SimpleCov.coverage_path}/coverage.svg"
   }
 
   def format(result)
@@ -41,7 +42,7 @@ class SimpleCov::Formatter::ShieldFormatter
 
   private
   def shield_file_path
-    "#{SimpleCov.coverage_path}/coverage.svg"
+    @config[:shield_file_path]
   end
 
   def color
